@@ -7,7 +7,7 @@
 </template>
 <script>
 import Card from "../components/Card";
-import LoginForm from "../components/LoginForm";
+import LoginForm from "../components/Forms/LoginForm";
 export default {
 	name: "LoginPage",
 	components: { LoginForm, Card }
