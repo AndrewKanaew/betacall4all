@@ -27,7 +27,7 @@ import Card from "../../components/Card";
 import CreateUserDialog from "../../components/Dialogs/CreateUserDialog";
 export default {
 	name: "DashboardPage",
-	components: {CreateUserDialog, Card },
+	components: { CreateUserDialog, Card },
 	computed: mapState(["dialogState"]),
 	methods: {
 		addUserHandler() {

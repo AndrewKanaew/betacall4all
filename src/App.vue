@@ -5,6 +5,9 @@
 </template>
 
 <style lang="scss">
+	.md-content.md-table-content.md-scrollbar.md-theme-default.md-table-empty{
+		display: none;
+	}
 </style>
 <script>
 import Layout from "./components/Layout";
