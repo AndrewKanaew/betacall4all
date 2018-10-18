@@ -14,20 +14,20 @@
 
 <script>
 export default {
-    name: "LoginForm",
-    data() {
-        return {
-            user: {
-                phone: null,
-                password: null
-            }
-        };
-    },
-    methods: {
-        submitHandler(event) {
-            event.preventDefault();
-        }
-    }
+	name: "LoginForm",
+	data() {
+		return {
+			user: {
+				phone: null,
+				password: null
+			}
+		};
+	},
+	methods: {
+		submitHandler(event) {
+			event.preventDefault();
+		}
+	}
 };
 </script>
 

@@ -6,9 +6,9 @@ import dialogState from "./storages/dialogs.state";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-    state: {
-        dialogState
-    },
-    mutations: {},
-    actions: {}
+	state: {
+		dialogState
+	},
+	mutations: {},
+	actions: {}
 });

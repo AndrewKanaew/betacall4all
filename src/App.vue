@@ -9,6 +9,6 @@
 <script>
 import Layout from "./components/Layout";
 export default {
-  components: { Layout }
+	components: { Layout }
 };
 </script>

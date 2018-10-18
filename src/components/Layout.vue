@@ -16,13 +16,13 @@
 
 <script>
 export default {
-    name: "Layout"
+	name: "Layout"
 };
 </script>
 
 <style scoped>
 .md-app-content {
-    background-color: #f1f1f1 !important;
-    height: calc(100vh - 64px);
+	background-color: #f1f1f1 !important;
+	height: calc(100vh - 64px);
 }
 </style>
