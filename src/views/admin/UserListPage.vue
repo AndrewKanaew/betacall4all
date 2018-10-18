@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<md-table class="user-list" v-model="searched" md-sort="fullName" md-sort-order="asc" md-card md-fixed-header>
+		<md-table class="user-list" v-model="searched" md-sort="id" md-sort-order="asc" md-card md-fixed-header>
 			<md-table-toolbar>
 				<div class="md-toolbar-section-start">
 					<div class="md-title">Список пользователей</div>
@@ -19,8 +19,16 @@
 			<md-table-row slot="md-table-row" slot-scope="{ item }">
 				<md-table-cell width="48" md-label="ID" md-sort-by="id" md-numeric>{{ item.id }}</md-table-cell>
 				<md-table-cell md-label="ФИО" md-sort-by="fullName">{{ item.fullName }}</md-table-cell>
-				<md-table-cell md-label="Телефон" md-sort-by="fullName">{{ item.phone }}</md-table-cell>
-				<md-table-cell md-label="Роль" md-sort-by="fullName">{{ item.role ? 'Администратор' : 'Менеджер' }}</md-table-cell>
+				<md-table-cell md-label="Телефон" md-sort-by="phone">{{ item.phone }}</md-table-cell>
+				<md-table-cell md-label="Роль" md-sort-by="role">{{ item.role ? 'Администратор' : 'Менеджер' }}</md-table-cell>
+				<md-table-cell md-label="Действия" md-sort-by="role"  md-numeric>
+					<md-button class="md-fab md-mini md-primary">
+						<md-icon>edit</md-icon>
+					</md-button>
+					<md-button class="md-fab md-mini md-plain">
+						<md-icon>delete</md-icon>
+					</md-button>
+				</md-table-cell>
 			</md-table-row>
 		</md-table>
 		<create-user-dialog />
