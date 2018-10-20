@@ -1,18 +1,19 @@
 <template>
-	<md-dialog :md-active.sync="dialogState.showCreateUserDialog">
+	<md-dialog :md-active.sync="dialogState.showUpdateUserDialog">
 		<md-dialog-title>
-			<div class="md-title">Добавить пользователя</div>
+			<div class="md-title">Редактировать пользователя</div>
 		</md-dialog-title>
-		<create-user-form />
+		<update-user-form :user-id="userId" />
 	</md-dialog>
 </template>
 
 <script>
 import { mapState } from "vuex";
-import CreateUserForm from "../Forms/CreateUserForm";
+import UpdateUserForm from "../Forms/UpdateUserForm";
 export default {
 	name: "UpdateUserDialog",
-	components: { CreateUserForm },
+	components: { UpdateUserForm },
+	props: ["userId"],
 	computed: mapState(["dialogState"])
 };
 </script>

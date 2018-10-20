@@ -22,16 +22,17 @@
 				<md-table-cell md-label="Телефон" md-sort-by="phone">{{ item.phone }}</md-table-cell>
 				<md-table-cell md-label="Роль" md-sort-by="role">{{ item.role ? 'Администратор' : 'Менеджер' }}</md-table-cell>
 				<md-table-cell md-label="Действия" md-sort-by="role"  md-numeric>
-					<md-button class="md-fab md-mini md-primary">
+					<md-button @click="updateUserHandler(item.id)" class="md-fab md-mini md-primary">
 						<md-icon>edit</md-icon>
 					</md-button>
-					<md-button class="md-fab md-mini md-plain">
+					<md-button @click="deleteUserHandler(item.id)" class="md-fab md-mini md-plain">
 						<md-icon>delete</md-icon>
 					</md-button>
 				</md-table-cell>
 			</md-table-row>
 		</md-table>
 		<create-user-dialog />
+		<update-user-dialog :user-id="userId" />
 		<md-button @click="addUserHandler" class="md-fab md-accent page-action">
 			<md-icon>add</md-icon>
 		</md-button>
@@ -41,6 +42,7 @@
 <script>
 import { mapState } from "vuex";
 import CreateUserDialog from "../../components/Dialogs/CreateUserDialog";
+import UpdateUserDialog from "../../components/Dialogs/UpdateUserDialog";
 
 const toLower = text => {
 	return text.toString().toLowerCase();
@@ -57,11 +59,12 @@ const searchByName = (items, term) => {
 
 export default {
 	name: "UserListPage",
-	components: { CreateUserDialog },
+	components: { UpdateUserDialog, CreateUserDialog },
 	data() {
 		return {
 			searched: [],
-			search: ""
+			search: "",
+			userId: null
 		};
 	},
 	computed: mapState(["dialogState", "usersState"]),
@@ -75,6 +78,14 @@ export default {
 		},
 		addUserHandler() {
 			this.dialogState.showCreateUserDialog = true;
+		},
+		updateUserHandler(id) {
+			this.userId = id;
+			this.dialogState.showUpdateUserDialog = true;
+		},
+		deleteUserHandler(id) {
+			let indexToRemove = this.usersState.findIndex(obj => obj.id === id);
+			this.usersState.splice(indexToRemove, 1);
 		}
 	}
 };
