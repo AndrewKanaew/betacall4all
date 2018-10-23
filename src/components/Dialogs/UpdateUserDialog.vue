@@ -14,7 +14,7 @@ export default {
 	name: "UpdateUserDialog",
 	components: { UpdateUserForm },
 	props: ["userId"],
-	computed: mapState(["dialogState"])
+	computed: mapState(["ordersLoad"])
 };
 </script>
 

@@ -4,6 +4,7 @@ import Home from "./views/Home.vue";
 import LoginPage from "./views/LoginPage.vue";
 import DashboardPage from "./views/admin/DashboardPage.vue";
 import UserListPage from "./views/admin/UserListPage.vue";
+import OrdersPage from "./views/admin/OrdersPage";
 
 Vue.use(Router);
 
@@ -25,6 +26,11 @@ export default new Router({
 			path: "/admin/users",
 			name: "users",
 			component: UserListPage
+		},
+		{
+			path: "/admin/orders",
+			name: "orders",
+			component: OrdersPage
 		},
 		{
 			path: "/login",
